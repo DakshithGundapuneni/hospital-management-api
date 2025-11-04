@@ -1,28 +1,61 @@
-# Python cache files
+# -----------------------------
+# Python / Django .gitignore
+# -----------------------------
+
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
+*$py.class
 
-# Virtual environment
+# C extensions
+*.so
+
+# Virtual environment folders
 env/
 venv/
 ENV/
 .venv/
+.env/
+env.bak/
 
-# Django database and media
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.py~
 *.sqlite3
 db.sqlite3
 /media
 /staticfiles
 
-# VSCode
+# Unit test / coverage reports
+.coverage
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# VSCode & PyCharm
 .vscode/
 .idea/
 
-# OS
+# Mac / Windows system files
 .DS_Store
 Thumbs.db
+ehthumbs.db
+Desktop.ini
 
-# Logs
-*.log
+# PIP and build folders
+build/
+dist/
+*.egg-info/
+*.egg
+pip-wheel-metadata/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
