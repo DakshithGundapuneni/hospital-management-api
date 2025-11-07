@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import path, include
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 def home(request):
     return HttpResponse("<h1>Welcome to Hospital Management API</h1><p>Go to /api/doctors/ to view the API.</p>")
@@ -25,5 +29,7 @@ urlpatterns = [
     path('', home),  # 👈 adds homepage
     path('admin/', admin.site.urls),
     path('api/', include('blog.urls')),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
 
